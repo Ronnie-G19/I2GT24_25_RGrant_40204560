@@ -7,7 +7,7 @@ public class PlayerControllers : MonoBehaviour
 
     public float horizontalInput;
     public float verticalInput;
-    public float speed = 10.0f;
+    public float speed = 13.0f;
     public float xRange = 10.0f;
     public float zRange = 15.0f;
 
@@ -16,7 +16,7 @@ public class PlayerControllers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,21 +27,21 @@ public class PlayerControllers : MonoBehaviour
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
-        if (transform.position.x > xRange) 
+        if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-       if (transform.position.z < -zRange)
+        if (transform.position.z < -zRange)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -zRange);
-       }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
 
-        //Movement
+        //Player Movement
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         verticalInput = Input.GetAxis("Vertical");
