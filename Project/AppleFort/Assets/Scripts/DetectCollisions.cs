@@ -19,7 +19,8 @@ public class DetectCollisions : MonoBehaviour
         
     }
 
-    // Seeds destroy on touch
+
+    // Seeds and Enemy destroy on touch
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Seed"))
