@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    //Tech
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
@@ -12,11 +12,18 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dirtParticle;
     public AudioClip jumpSound;
     public AudioClip crashSound;
+
+    //Movement
+    private float horizontalInput;
+    public float speed = 10f;
     public float jumpForce = 10;
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver;
 
+    //Boundaries
+    private float xRange = 13f;
+    private float rightBoundary = 189f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +37,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -40,9 +47,27 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
 
+        //Keeping Player Contained
+        //Left
+        if (transform.position.x < -xRange)
+        {
+            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
+        }
+        //Right
+        if (transform.position.x > rightBoundary)
+        {
+            transform.position = new Vector3(rightBoundary, transform.position.y, transform.position.z);
 
+        }
+
+            //Movement
+            horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * horizontalInput);
     }
 
+
+
+    //Collision into Obstacles = death
     private void OnCollisionEnter(Collision collision)
     {
         
