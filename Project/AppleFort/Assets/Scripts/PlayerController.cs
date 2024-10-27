@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
             isOnGround = true;
             dirtParticle.Play();
+
         } else if (collision.gameObject.CompareTag("Obstacle"))
         {
 
