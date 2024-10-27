@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     //Boundaries
     private float xRange = 13f;
     private float rightBoundary = 189f;
+
+
     // Start is called before the first frame update
     void Start()
     {
