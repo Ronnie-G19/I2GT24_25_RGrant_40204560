@@ -103,8 +103,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.94110006, y: 0.9514684, z: 1}
+  m_Center: {x: -0.0053412835, y: 0.024265584, z: 0}
 --- !u!1 &7491355136309446565
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,8 +210,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9371144, y: 1, z: 1}
+  m_Center: {x: 0.005124413, y: 0, z: 0}
 --- !u!114 &5454197417138726030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,8 +237,9 @@ GameObject:
   - component: {fileID: 2846690690200913808}
   - component: {fileID: 4704127642831530802}
   - component: {fileID: 5038496346262892625}
+  - component: {fileID: 106566118112494340}
   m_Layer: 0
-  m_Name: Enemy01
+  m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +254,7 @@ Transform:
   m_GameObject: {fileID: 9214848770029158719}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14, y: -8, z: -55.559}
+  m_LocalPosition: {x: -5.14, y: -7.95, z: -55.559}
   m_LocalScale: {x: 3.46, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -325,12 +326,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.95718694, y: 0.15164295, z: 0.93179524}
-  m_Center: {x: 0.0031292266, y: 0.4516387, z: -0.03410238}
+  m_Size: {x: 0.9538376, y: 0.9289618, z: 0.872001}
+  m_Center: {x: -0.009325337, y: -0.0029468783, z: -0.0042052567}
 --- !u!54 &5038496346262892625
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -358,3 +359,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &106566118112494340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9214848770029158719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96ccb6590077e543865821fb1d14f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  targetPoint: 0
+  speed: 4
