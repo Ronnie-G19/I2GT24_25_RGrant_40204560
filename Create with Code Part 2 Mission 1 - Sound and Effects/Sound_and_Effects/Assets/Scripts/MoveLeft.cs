@@ -17,7 +17,7 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerControllerScript.gameOver == false)
+        if (playerControllerScript.gameOver == false)
         {
 
             transform.Translate(Vector3.left * Time.deltaTime * speed);
@@ -30,7 +30,18 @@ public class MoveLeft : MonoBehaviour
             Destroy(gameObject);
 
         }
-        
+       // if (Input.GetKeyDown(KeyCode.D))
+        //{
 
+            //speed = 60;
+
+       // }
+       // if (Input.GetKeyUp(KeyCode.D))
+        //{
+            //speed = 30;
+
+       // }
     }
+
+  
 }
