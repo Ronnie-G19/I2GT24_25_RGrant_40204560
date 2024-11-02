@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private float xRange = 13f;
     private float rightBoundary = 189f;
 
+    //Objects
+    public GameObject door;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DetectCollisions.seedsCollected == 6)
+        {
+            OpenDoor();
+        }
+
+        //Checking for Game Over to stop movement
+        if (gameOver)
+        {
+            return;
+        }
+
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
@@ -62,17 +75,29 @@ public class PlayerController : MonoBehaviour
 
         }
 
-            //Movement
-            horizontalInput = Input.GetAxis("Horizontal");
+        //Movement
+        horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.forward * Time.deltaTime * speed * horizontalInput);
     }
 
 
+    void OpenDoor()
+    {
+        if (door != null)
+        {
 
-    //Collision into Obstacles = death
+            door.SetActive(false);
+            Debug.Log("Door opened!");
+        }
+
+
+    }
+
+
+    //Collision into Enemies = death unless Squashed
     private void OnCollisionEnter(Collision collision)
     {
-        
+
 
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -80,17 +105,28 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
             dirtParticle.Play();
 
-        } else if (collision.gameObject.CompareTag("Obstacle"))
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
+            Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
+            if (squashedScript != null && !squashedScript.isSquashed)
 
-            Debug.Log("Game Over");
-            gameOver = true;
-            playerAnim.SetBool("Death_b", true);
-            playerAnim.SetInteger("DeathType_int", 1);
-            explosionParticle.Play();
-            dirtParticle.Stop();
-            playerAudio.PlayOneShot(crashSound, 1.0f);
+            {
 
+                Debug.Log("Game Over");
+                gameOver = true;
+                playerAnim.SetBool("Death_b", true);
+                playerAnim.SetInteger("DeathType_int", 1);
+                explosionParticle.Play();
+                dirtParticle.Stop();
+                playerAudio.PlayOneShot(crashSound, 1.0f);
+
+            }
+            else
+            {
+                Debug.Log("landed on squshed enemy");
+
+            }
         }
     }
 

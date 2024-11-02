@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Squashed : MonoBehaviour
 {
+    public bool isSquashed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +20,15 @@ public class Squashed : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Player")
+        if (other.name == "Player" && !isSquashed)
 
-        { 
-            foreach (Transform child in transform)
+        {
+            isSquashed = true;
+            foreach (Transform child in transform) { 
                 child.gameObject.SetActive(false);
-                Destroy(transform.parent.gameObject);
+            }
+            Destroy(transform.parent.gameObject);
+            Debug.Log("Enemy squashed!");
         }
     }   
 }
