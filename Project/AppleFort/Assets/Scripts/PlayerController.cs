@@ -25,9 +25,6 @@ public class PlayerController : MonoBehaviour
     private float xRange = 13f;
     private float rightBoundary = 189f;
 
-    //Objects
-    public GameObject door;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -40,12 +37,7 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (DetectCollisions.seedsCollected == 6)
-        {
-            OpenDoor();
-        }
-
+    { 
         //Checking for Game Over to stop movement
         if (gameOver)
         {
@@ -78,19 +70,6 @@ public class PlayerController : MonoBehaviour
         //Movement
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.forward * Time.deltaTime * speed * horizontalInput);
-    }
-
-
-    void OpenDoor()
-    {
-        if (door != null)
-        {
-
-            door.SetActive(false);
-            Debug.Log("Door opened!");
-        }
-
-
     }
 
 

@@ -9,6 +9,7 @@ TagManager:
   - Seed
   - Enemy
   - Platform
+  - Door
   layers:
   - Default
   - TransparentFX
