@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4032035266298093003}
   - component: {fileID: 3976900367517391822}
   - component: {fileID: 4777521497532891706}
-  - component: {fileID: 4635270760432345451}
   m_Layer: 0
   m_Name: Good 1
   m_TagString: Untagged
@@ -116,7 +115,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4648692619001829282}
   serializedVersion: 4
-  m_Mass: 2
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -147,15 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dd08f5f3775c74e8806b1dc867d9da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4635270760432345451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4648692619001829282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2dd08f5f3775c74e8806b1dc867d9da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  pointValue: 5
+  explosionParticle: {fileID: 625621707174889904, guid: ef43e5aef41c142fb85a7658a397dc75, type: 3}
