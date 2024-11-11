@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
+    private GameManager gameManager; //Calling Game Manager Function
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
     public AudioClip jumpSound;
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
             if (squashedScript != null && !squashedScript.isSquashed)
 
             {
-
+                //gameManager.isGameActive = false; // Need to Test this works - setting game active to false - need to put this at the bottom?
                 Debug.Log("Game Over");
                 gameOver = true;
                 playerAnim.SetBool("Death_b", true);
