@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
+        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -103,6 +104,13 @@ public class PlayerController : MonoBehaviour
                 gameManager.isGameActive = false;
 
             }
+            //Making sure gameManager is assigned before using it
+            if(gameManager != null)
+            {
+                gameManager.isGameActive = false;
+                gameManager.GameOver();
+            }
+
             else
             {
                 Debug.Log("landed on squshed enemy");
