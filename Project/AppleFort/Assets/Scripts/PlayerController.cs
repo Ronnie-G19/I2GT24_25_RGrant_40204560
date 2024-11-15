@@ -88,7 +88,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
+            //Does enemy have squash script?
             Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
+
+            //If the enemy has a Squashed script and it not squashed,trigger Game Over
             if (squashedScript != null && !squashedScript.isSquashed)
             {
                 
@@ -100,15 +103,16 @@ public class PlayerController : MonoBehaviour
                 dirtParticle.Stop();
                 playerAudio.PlayOneShot(crashSound, 1.0f);
             }
-            //Making sure gameManager is assigned before using it
-            if(gameManager != null)
+            //Making sure gameManager is assigned before using it - trigger when enemy is not squashed
+            if (gameManager != null)
             {
                 gameManager.isGameActive = false;
                 gameManager.GameOver();
             }
 
-            else
+            else if (squashedScript != null && squashedScript.isSquashed)
             {
+                //Enemy is squashed, do nothing game over related
                 Debug.Log("landed on squshed enemy");
 
             }
