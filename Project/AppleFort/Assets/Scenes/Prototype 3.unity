@@ -3578,7 +3578,6 @@ MonoBehaviour:
   crashSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
   speed: 10
   jumpForce: 650
-  gravityModifier: 1.5
   isOnGround: 1
   gameOver: 0
 --- !u!65 &1041756227
@@ -6475,6 +6474,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1252042269}
   restartButton: {fileID: 1395950356}
   isGameActive: 0
+  gravityModifier: 1.5
 --- !u!1 &1730961600
 GameObject:
   m_ObjectHideFlags: 0

@@ -90,7 +90,6 @@ public class PlayerController : MonoBehaviour
         {
             Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
             if (squashedScript != null && !squashedScript.isSquashed)
-
             {
                 
                 Debug.Log("Game Over");
@@ -100,8 +99,6 @@ public class PlayerController : MonoBehaviour
                 explosionParticle.Play();
                 dirtParticle.Stop();
                 playerAudio.PlayOneShot(crashSound, 1.0f);
-                gameManager.isGameActive = false;
-
             }
             //Making sure gameManager is assigned before using it
             if(gameManager != null)
