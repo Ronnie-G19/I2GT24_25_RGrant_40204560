@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     private AudioSource playerAudio;
     private GameManager gameManager; //Calling Game Manager Function
+    private Vector3 originalGravity;
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
     public AudioClip jumpSound;
@@ -17,8 +18,7 @@ public class PlayerController : MonoBehaviour
     //Movement
     private float horizontalInput;
     public float speed = 10f;
-    public float jumpForce = 10;
-    public float gravityModifier;
+    public float jumpForce = 10f;
     public bool isOnGround = true;
     public bool gameOver;
 
@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
-        Physics.gravity *= gravityModifier;
         gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 

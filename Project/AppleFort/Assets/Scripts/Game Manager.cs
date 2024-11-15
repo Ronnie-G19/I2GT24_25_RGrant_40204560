@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
    public TextMeshProUGUI gameOverText;
    public Button restartButton;
    public bool isGameActive;
+   public float gravityModifier = 1.0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
         isGameActive = true;
+        SetGravity();
     }
 
     // Update is called once per frame
@@ -27,11 +29,23 @@ public class GameManager : MonoBehaviour
     //Game Over Method
     public void GameOver()
     {
-       if (isGameActive == false) //Should be triggered by dying in the Player Controller Script - need to set up text and create button
+       if (isGameActive == false) //Should be triggered by dying in the Player Controller Script
         { 
          gameOverText.gameObject.SetActive(true);
-         restartButton.gameObject.SetActive(true);
+         restartButton.gameObject.SetActive(true); 
        }
 
+    }
+
+    public void SetGravity()
+    {
+        Physics.gravity = new Vector3(0, -9.81f * gravityModifier, 0);
+    }
+
+    public void RestartGame()
+    {
+        SetGravity();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 }
