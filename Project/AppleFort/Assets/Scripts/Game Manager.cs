@@ -7,15 +7,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-   // public TextMeshProUGUI gameOverText;
-    //public Button restartButton;
-   // public bool isGameActive;
+   public TextMeshProUGUI gameOverText;
+   public Button restartButton;
+   public bool isGameActive;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //isGameActive = true;
+        isGameActive = true;
     }
 
     // Update is called once per frame
@@ -24,14 +24,14 @@ public class GameManager : MonoBehaviour
         
     }
 
-    //Game Over Method - THIS NEW CODE BROKE THE ON COLLISION IN PLAYER CONTROLLER!
-    //public void GameOver()
-    //{
-       // if (isGameActive == false) //Should be triggered by dying in the Player Controller Script - need to set up text and create button
-        //{ 
-         // gameOverText.gameObject.SetActive(true);
-         // restartButton.gameObject.SetActive(true);
-       // }
+    //Game Over Method - 
+    public void GameOver()
+    {
+       if (isGameActive == false) //Should be triggered by dying in the Player Controller Script - need to set up text and create button
+        { 
+         gameOverText.gameObject.SetActive(true);
+          restartButton.gameObject.SetActive(true);
+       }
 
-    //}
+    }
 }

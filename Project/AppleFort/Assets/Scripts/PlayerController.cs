@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
             if (squashedScript != null && !squashedScript.isSquashed)
 
             {
-                //gameManager.isGameActive = false; // Need to Test this works - setting game active to false - need to put this at the bottom?
+                
                 Debug.Log("Game Over");
                 gameOver = true;
                 playerAnim.SetBool("Death_b", true);
@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
                 explosionParticle.Play();
                 dirtParticle.Stop();
                 playerAudio.PlayOneShot(crashSound, 1.0f);
+                gameManager.isGameActive = false;
 
             }
             else
