@@ -39,11 +39,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
+        //Allow player movement if game is active
+        if(gameManager != null && !gameManager.isGameActive)
+        {
+            return;
+        }
+
         //Checking for Game Over to stop movement
         if (gameOver)
         {
             return;
         }
+
 
         //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
