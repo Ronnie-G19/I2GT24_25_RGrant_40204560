@@ -28,12 +28,11 @@ public class GameManager : MonoBehaviour
 
     //Game Over Method
     public void GameOver()
-    {
-       if (isGameActive == false) //Should be triggered by dying in the Player Controller Script
-        { 
-         gameOverText.gameObject.SetActive(true);
-         restartButton.gameObject.SetActive(true); 
-       }
+    {       
+       
+      gameOverText.gameObject.SetActive(true);
+      restartButton.gameObject.SetActive(true);
+      isGameActive = false;    
 
     }
 

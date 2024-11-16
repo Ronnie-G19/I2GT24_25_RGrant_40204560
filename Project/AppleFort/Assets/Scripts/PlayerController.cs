@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     private AudioSource playerAudio;
     private GameManager gameManager; //Calling Game Manager Function
-    private Vector3 originalGravity;
+    private Vector3 originalGravity; //Setting Gravity
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
     public AudioClip jumpSound;
@@ -102,19 +102,7 @@ public class PlayerController : MonoBehaviour
                 explosionParticle.Play();
                 dirtParticle.Stop();
                 playerAudio.PlayOneShot(crashSound, 1.0f);
-            }
-            //Making sure gameManager is assigned before using it - trigger when enemy is not squashed
-            if (gameManager != null)
-            {
-                gameManager.isGameActive = false;
                 gameManager.GameOver();
-            }
-
-            else if (squashedScript != null && squashedScript.isSquashed)
-            {
-                //Enemy is squashed, do nothing game over related
-                Debug.Log("landed on squshed enemy");
-
             }
         }
     }
