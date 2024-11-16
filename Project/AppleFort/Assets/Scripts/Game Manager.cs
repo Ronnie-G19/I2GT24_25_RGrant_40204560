@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +12,12 @@ public class GameManager : MonoBehaviour
    public Button restartButton;
    public bool isGameActive;
    public float gravityModifier = 1.0f;
+    public GameObject titleScreen;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        isGameActive = true;
         SetGravity();
     }
 
@@ -44,7 +45,11 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SetGravity();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
+    }
+    public void StartGame()
+    {
+        isGameActive = true;
+        titleScreen.gameObject.SetActive(false);
     }
 }
