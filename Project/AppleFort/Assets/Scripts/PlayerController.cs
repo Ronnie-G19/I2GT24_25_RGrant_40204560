@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     private AudioSource playerAudio;
     private GameManager gameManager; //Calling Game Manager Function
+    private LifeSystem lifeSystem; //Calling Life System Function
     private Vector3 originalGravity; //Setting Gravity
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
@@ -98,7 +99,7 @@ public class PlayerController : MonoBehaviour
             //Does enemy have squash script?
             Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
 
-            //If the enemy has a Squashed script and it not squashed,trigger Game Over
+            //If the enemy has a Squashed script and it not squashed,trigger Game Over - now want to trigger this so it takes away a life instead of triggers game over
             if (squashedScript != null && !squashedScript.isSquashed)
             {
                 
