@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
             //Does enemy have squash script?
             Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
 
-            //If the enemy has a Squashed script and it not squashed,trigger Game Over - now want to trigger this so it takes away a life instead of triggers game over
+            //If the enemy has a Squashed script and it not squashed,trigger Game Over - now want to trigger this so it takes away a life instead of triggers game over - Before change 
             if (squashedScript != null && !squashedScript.isSquashed)
             {
                 
