@@ -3837,13 +3837,13 @@ PrefabInstance:
       addedObject: {fileID: 1041756226}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 3bd8a450fcb589542a7843ea7bda2ee6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1041756225}
-    - targetCorrespondingSourceObject: {fileID: 100000, guid: 3bd8a450fcb589542a7843ea7bda2ee6, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1041756230}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 3bd8a450fcb589542a7843ea7bda2ee6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1041756232}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 3bd8a450fcb589542a7843ea7bda2ee6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1041756225}
   m_SourcePrefab: {fileID: 100100000, guid: 3bd8a450fcb589542a7843ea7bda2ee6, type: 3}
 --- !u!1 &1041756223 stripped
 GameObject:
@@ -3990,8 +3990,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.544685, y: 3.04317, z: 0.8050644}
-  m_Center: {x: 0.026150227, y: 1.5405359, z: 0.05061251}
+  m_Size: {x: 3.2425373, y: 3.04317, z: 0.6559975}
+  m_Center: {x: 0.07084566, y: 1.5405359, z: 0.0443711}
 --- !u!54 &1041756228
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4476,6 +4476,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1374677477}
+    - target: {fileID: 4715342998951803330, guid: 76f056c8fa644724b9648d657f8d4e99, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7998809881713182478, guid: 76f056c8fa644724b9648d657f8d4e99, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.36

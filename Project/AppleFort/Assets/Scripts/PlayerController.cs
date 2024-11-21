@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dirtParticle;
     public AudioClip jumpSound;
     public AudioClip crashSound;
+    private bool damageCooldown = false;
+    private float damageCooldownDuration = 1.0f;
 
     //Movement
     private float horizontalInput;
@@ -97,13 +99,16 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
+            if (damageCooldown) return;
+
             //Does enemy have squash script?
             Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
 
             //If the enemy has a Squashed script and it not squashed,trigger Damage Taken 
             if (squashedScript != null && !squashedScript.isSquashed)
             {
-                
+                damageCooldown = true;
+                Invoke(nameof(ResetDamageCooldown), damageCooldownDuration);
                 
                 Debug.Log("Damage Taken");
                 lifeSystem.TakeDamage(1);
@@ -128,5 +133,10 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
+    private void ResetDamageCooldown()
+    {
+        damageCooldown = false;
+    }
 }
+
+
