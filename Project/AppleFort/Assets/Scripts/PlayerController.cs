@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
+        lifeSystem = GameObject.FindObjectOfType<LifeSystem>();
     }
 
     // Update is called once per frame
@@ -99,20 +100,33 @@ public class PlayerController : MonoBehaviour
             //Does enemy have squash script?
             Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
 
-            //If the enemy has a Squashed script and it not squashed,trigger Game Over - now want to trigger this so it takes away a life instead of triggers game over - Before change 
+            //If the enemy has a Squashed script and it not squashed,trigger Damage Taken 
             if (squashedScript != null && !squashedScript.isSquashed)
             {
                 
-                Debug.Log("Game Over");
-                gameOver = true;
-                playerAnim.SetBool("Death_b", true);
-                playerAnim.SetInteger("DeathType_int", 1);
+                
+                Debug.Log("Damage Taken");
+                lifeSystem.TakeDamage(1);
                 explosionParticle.Play();
                 dirtParticle.Stop();
                 playerAudio.PlayOneShot(crashSound, 1.0f);
-                gameManager.GameOver();
+                
             }
-        }
+             if(lifeSystem.life==0)
+             { //need code that says when life = 0 then game over
+               Debug.Log("Game Over");
+               gameOver = true;
+               playerAnim.SetBool("Death_b", true);
+               playerAnim.SetInteger("DeathType_int", 1);
+               dirtParticle.Stop();
+               gameManager.GameOver();
+               // ^ these would all then be removed from the damage script
+               explosionParticle.Play();
+               playerAudio.PlayOneShot(crashSound, 1.0f);
+             }
+            }
+
+
     }
 
 }

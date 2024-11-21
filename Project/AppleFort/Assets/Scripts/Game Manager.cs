@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
    public Button restartButton;
    public bool isGameActive;
    public float gravityModifier = 1.0f;
-    public GameObject titleScreen;
+   public GameObject titleScreen;
 
 
     // Start is called before the first frame update
@@ -30,10 +30,10 @@ public class GameManager : MonoBehaviour
     //Game Over Method
     public void GameOver()
     {       
-       
+      
       gameOverText.gameObject.SetActive(true);
       restartButton.gameObject.SetActive(true);
-      isGameActive = false;    
+      isGameActive = false;
 
     }
 
@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        DetectCollisions.seedsCollected = 0; // Reset seeds count
         SetGravity();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);        
     }

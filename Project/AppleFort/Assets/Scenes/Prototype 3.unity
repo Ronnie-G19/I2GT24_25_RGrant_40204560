@@ -4048,6 +4048,7 @@ MonoBehaviour:
   - {fileID: 1042506632}
   - {fileID: 784942158}
   life: 3
+  dead: 0
 --- !u!1 &1042506632 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4441981337178082265, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}

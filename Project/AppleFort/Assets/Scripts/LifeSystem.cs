@@ -6,11 +6,13 @@ public class LifeSystem : MonoBehaviour
 {
     public GameObject[] lives;
     public int life;
+    public bool dead;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GetComponent<GameManager>();
     }
 
 
@@ -18,22 +20,19 @@ public class LifeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life < 1)
+        if (dead == true)
         {
-            Destroy(lives[0].gameObject);
-        }
-        else if (life < 2)
-        {
-            Destroy(lives[1].gameObject);
-        }
-        else if (life < 3)
-        {
-            Destroy(lives[2].gameObject);
+            gameManager.GameOver();
         }
     }
 
     public void TakeDamage(int d)
     {
         life -= d;
+        Destroy(lives[life].gameObject);
+        if(life < 1)
+        {
+            dead = true;
+        }
     }
 }
