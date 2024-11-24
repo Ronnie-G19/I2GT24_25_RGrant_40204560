@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //startTimer = false;
+        startTimer = false;
     }
 
     // Update is called once per frame
@@ -28,5 +28,10 @@ public class Timer : MonoBehaviour
 
         timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
         }
+    }
+
+    public void StopTimer()
+    {
+        startTimer=false;
     }
 }

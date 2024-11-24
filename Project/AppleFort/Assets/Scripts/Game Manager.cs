@@ -8,12 +8,16 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
+   //Canvas
    public TextMeshProUGUI gameOverText;
    public Button restartButton;
+   public GameObject titleScreen;
+   public TextMeshProUGUI levelCompeteText;
+   public Button nextLevel;
+
+   //Tech
    public bool isGameActive;
    public float gravityModifier = 1.0f;
-   public GameObject titleScreen;
-
 
     // Start is called before the first frame update
     void Start()
@@ -52,5 +56,12 @@ public class GameManager : MonoBehaviour
     {
         isGameActive = true;
         titleScreen.gameObject.SetActive(false);
+    }
+
+    public void LevelComplete()
+    {
+        levelCompeteText.gameObject.SetActive(true);
+        nextLevel.gameObject.SetActive(true);
+        isGameActive = false;
     }
 }

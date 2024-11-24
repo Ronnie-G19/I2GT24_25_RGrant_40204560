@@ -8,8 +8,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private Animator playerAnim;
     private AudioSource playerAudio;
-    private GameManager gameManager; //Calling Game Manager Function
-    private LifeSystem lifeSystem; //Calling Life System Function
+    private GameManager gameManager; //Calling Game Manager Class
+    private LifeSystem lifeSystem; //Calling Life System Class
+    private Timer timer; //Calling Timer Class
     private Vector3 originalGravity; //Setting Gravity
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
         playerAudio = GetComponent<AudioSource>();
         gameManager = GameObject.FindObjectOfType<GameManager>();
         lifeSystem = GameObject.FindObjectOfType<LifeSystem>();
+        timer = GameObject.FindObjectOfType<Timer>();
     }
 
     // Update is called once per frame
@@ -118,14 +120,14 @@ public class PlayerController : MonoBehaviour
                 
             }
              if(lifeSystem.life==0)
-             { //need code that says when life = 0 then game over
+             { 
                Debug.Log("Game Over");
                gameOver = true;
                playerAnim.SetBool("Death_b", true);
                playerAnim.SetInteger("DeathType_int", 1);
                dirtParticle.Stop();
                gameManager.GameOver();
-               // ^ these would all then be removed from the damage script
+               timer.StopTimer();
                explosionParticle.Play();
                playerAudio.PlayOneShot(crashSound, 1.0f);
              }
