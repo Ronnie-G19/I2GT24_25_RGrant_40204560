@@ -58,10 +58,19 @@ public class GameManager : MonoBehaviour
         titleScreen.gameObject.SetActive(false);
     }
 
+    public void NextLevel()
+    {
+        isGameActive = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Debug.Log("Next Level Loaded");
+
+    }
+
     public void LevelComplete()
     {
         levelCompeteText.gameObject.SetActive(true);
         nextLevel.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
         isGameActive = false;
     }
 }

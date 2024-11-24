@@ -156,7 +156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: 212}
+  m_AnchoredPosition: {x: 3, y: 204}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &16858813
@@ -1938,7 +1938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6135756296398238299, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 222.1
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 6135756296398238299, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3528,6 +3528,7 @@ GameObject:
   - component: {fileID: 909461176}
   - component: {fileID: 909461175}
   - component: {fileID: 909461174}
+  - component: {fileID: 909461177}
   m_Layer: 5
   m_Name: Next Level Button
   m_TagString: Untagged
@@ -3598,7 +3599,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 909461175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1720194176}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &909461175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3637,6 +3650,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909461172}
   m_CullTransparentMesh: 1
+--- !u!114 &909461177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909461172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c2408c657c9754c9ae86e8d18ee8b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &936559840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4099,7 +4124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3bd8a450fcb589542a7843ea7bda2ee6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 192.18
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3bd8a450fcb589542a7843ea7bda2ee6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4762,11 +4787,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6135756296398238299, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 30.100006
+      value: 30.099976
       objectReference: {fileID: 0}
     - target: {fileID: 6135756296398238299, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 222.1
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 6135756296398238299, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6237,7 +6262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -82.5}
+  m_AnchoredPosition: {x: 2, y: -94}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1395950356
@@ -6652,7 +6677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6135756296398238299, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 222.1
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 6135756296398238299, guid: 80ca93a47c1605d4e997c3d5bb99ab29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
