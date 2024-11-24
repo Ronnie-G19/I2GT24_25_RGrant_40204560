@@ -8275,13 +8275,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlyingEnemy1
       objectReference: {fileID: 0}
+    - target: {fileID: 4357137788742142756, guid: 8791cebd81140cd40ac9498f04422fca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4357137788742142756, guid: 8791cebd81140cd40ac9498f04422fca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 7801427037893447080, guid: 8791cebd81140cd40ac9498f04422fca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 7801427037893447080, guid: 8791cebd81140cd40ac9498f04422fca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.22
+      value: 6.57
       objectReference: {fileID: 0}
     - target: {fileID: 7801427037893447080, guid: 8791cebd81140cd40ac9498f04422fca, type: 3}
       propertyPath: m_LocalPosition.z
