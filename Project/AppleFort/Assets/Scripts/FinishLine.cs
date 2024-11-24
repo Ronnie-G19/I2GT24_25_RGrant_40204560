@@ -31,7 +31,6 @@ public class FinishLine : MonoBehaviour
 
             gameManager.LevelComplete();
             timer.StopTimer();
-            // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         }
     }

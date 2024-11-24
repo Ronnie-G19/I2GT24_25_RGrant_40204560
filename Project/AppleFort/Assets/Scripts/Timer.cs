@@ -32,6 +32,6 @@ public class Timer : MonoBehaviour
 
     public void StopTimer()
     {
-        startTimer=false;
+        startTimer = false;
     }
 }
