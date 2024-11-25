@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         isGameActive = true;
+        DetectCollisions.seedsCollected = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Debug.Log("Next Level Loaded");
 

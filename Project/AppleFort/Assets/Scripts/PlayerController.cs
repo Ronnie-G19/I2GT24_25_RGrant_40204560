@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip crashSound;
     private bool damageCooldown = false;
-    private float damageCooldownDuration = 1.0f;
+    private float damageCooldownDuration = 2.0f;
 
     //Movement
     private float horizontalInput;

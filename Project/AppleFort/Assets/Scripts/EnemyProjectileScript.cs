@@ -29,7 +29,7 @@ public class EnemyProjectileScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 4)
+        if (timer > 5)
         {
             Destroy(gameObject);
         }
