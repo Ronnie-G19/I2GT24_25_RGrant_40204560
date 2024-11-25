@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
                 playerAudio.PlayOneShot(crashSound, 1.0f);
                 
             }
-             if(lifeSystem.life==0)
+             if(lifeSystem.dead==true)
              { 
                Debug.Log("Game Over");
                gameOver = true;

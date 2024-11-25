@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1504413089475733908}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.555, y: 0, z: 0}
+  m_LocalPosition: {x: 0.05, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 8863102088983321742}
   - component: {fileID: 6484394605908813303}
   - component: {fileID: 4388246195087021956}
-  - component: {fileID: 1101212130310246720}
+  - component: {fileID: 7097889073018530737}
   m_Layer: 0
   m_Name: FlyingEnemy1
   m_TagString: Enemy
@@ -61,8 +61,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3081376133461571883}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.22, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.08, y: 6.57, z: 0}
   m_LocalScale: {x: 2.68, y: 2.68, z: 2.68}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   range: 1.5
---- !u!114 &1101212130310246720
+--- !u!114 &7097889073018530737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,13 +191,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3081376133461571883}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01261de840113954e903f34ebd398590, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e3b18d1274c5ab43842c5945d79b9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 3
   enemyProjectile: {fileID: 6675115156235729666, guid: b475644ea7c22e645b1f397d156d0ec1, type: 3}
-  spawnPoint: {fileID: 4357137788742142756}
-  enemySpeed: 5
+  enemyProjectilePos: {fileID: 4357137788742142756}
 --- !u!1 &3449636368694940434
 GameObject:
   m_ObjectHideFlags: 0
