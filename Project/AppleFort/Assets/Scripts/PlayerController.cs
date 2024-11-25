@@ -106,39 +106,52 @@ public class PlayerController : MonoBehaviour
             //Does enemy have squash script?
             Squashed squashedScript = collision.gameObject.GetComponentInChildren<Squashed>();
 
-            //If the enemy has a Squashed script and it not squashed,trigger Damage Taken 
+            //If the enemy has a Squashed script and is not squashed,trigger Damage Taken 
             if (squashedScript != null && !squashedScript.isSquashed)
             {
-                damageCooldown = true;
-                Invoke(nameof(ResetDamageCooldown), damageCooldownDuration);
-                
-                Debug.Log("Damage Taken");
-                lifeSystem.TakeDamage(1);
-                explosionParticle.Play();
-                dirtParticle.Stop();
-                playerAudio.PlayOneShot(crashSound, 1.0f);
-                
+                DamageTaken();
+
             }
-             if(lifeSystem.dead==true)
+             if (lifeSystem.dead==true)
              { 
-               Debug.Log("Game Over");
-               gameOver = true;
-               playerAnim.SetBool("Death_b", true);
-               playerAnim.SetInteger("DeathType_int", 1);
-               dirtParticle.Stop();
-               gameManager.GameOver();
-               timer.StopTimer();
-               explosionParticle.Play();
-               playerAudio.PlayOneShot(crashSound, 1.0f);
+                RanOutOfLives();
              }
             }
 
 
     }
+    public void DamageTaken()
+    {
+        damageCooldown = true;
+        Invoke(nameof(ResetDamageCooldown), damageCooldownDuration);
+
+        Debug.Log("Damage Taken");
+        lifeSystem.TakeDamage(1);
+        explosionParticle.Play();
+        dirtParticle.Stop();
+        playerAudio.PlayOneShot(crashSound, 1.0f);
+
+    }
+
+    public void RanOutOfLives()
+    {
+        Debug.Log("Game Over");
+        gameOver = true;
+        playerAnim.SetBool("Death_b", true);
+        playerAnim.SetInteger("DeathType_int", 1);
+        dirtParticle.Stop();
+        timer.StopTimer();
+        explosionParticle.Play();
+        playerAudio.PlayOneShot(crashSound, 1.0f);
+    }
+
     private void ResetDamageCooldown()
     {
         damageCooldown = false;
     }
+
+
+
 }
 
 

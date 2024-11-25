@@ -12,7 +12,7 @@ public class LifeSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GetComponent<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
 
@@ -20,7 +20,7 @@ public class LifeSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead == true)
+        if (dead && gameManager != null)
         {
             gameManager.GameOver();
         }
@@ -30,7 +30,7 @@ public class LifeSystem : MonoBehaviour
     {
         life -= d;
         Destroy(lives[life].gameObject);
-        if(life < 1)
+        if(life == 0)
         {
             dead = true;
         }
