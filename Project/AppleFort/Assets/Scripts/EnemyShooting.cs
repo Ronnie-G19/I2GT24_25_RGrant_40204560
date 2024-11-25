@@ -10,16 +10,25 @@ public class EnemyShooting : MonoBehaviour
 
     private float timer;
     private GameObject player;
+    private GameManager gameManager;
+    private LifeSystem lifeSystem;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+        lifeSystem = GameObject.FindObjectOfType<LifeSystem>();
     }
 
     // Update is called once per frame
     void Update()
-    {        
+    {
+        if (gameManager != null && !gameManager.isGameActive || lifeSystem != null && lifeSystem.dead)
+        {
+            return; 
+        }
+
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
         //Debug.Log (distance);
@@ -33,7 +42,7 @@ public class EnemyShooting : MonoBehaviour
                 timer = 0;
                 shoot();
           }
-        }
+        } 
 
 
     }

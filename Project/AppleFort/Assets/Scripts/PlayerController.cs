@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     { 
+
         //Allow player movement if game is active
         if(gameManager != null && !gameManager.isGameActive)
         {
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
             dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
+        
 
         //Keeping Player Contained
         //Left
