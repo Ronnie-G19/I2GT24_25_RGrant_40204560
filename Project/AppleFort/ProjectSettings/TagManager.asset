@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Platform
   - Door
+  - BonusLife
   layers:
   - Default
   - TransparentFX

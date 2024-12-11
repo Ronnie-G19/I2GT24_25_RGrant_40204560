@@ -5,6 +5,8 @@ using UnityEngine;
 public class LifeSystem : MonoBehaviour
 {
     public GameObject[] lives;
+    public int maxLives = 6;
+    public int startingLives = 3;
     public int life;
     public bool dead;
     private GameManager gameManager;
@@ -13,6 +15,19 @@ public class LifeSystem : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        life = startingLives;
+
+        for (int i = 0; i < lives.Length; i++)
+        {
+            if (i < startingLives)
+            {
+                lives[i].SetActive(true);
+            }
+            else
+            {
+                lives[i].SetActive(false);
+            }
+        }
     }
 
 
@@ -29,10 +44,38 @@ public class LifeSystem : MonoBehaviour
     public void TakeDamage(int d)
     {
         life -= d;
-        Destroy(lives[life].gameObject);
+        if (life >= 0 && life < lives.Length)
+        {
+            Destroy(lives[life].gameObject);
+        }   
+        
         if(life == 0)
         {
             dead = true;
         }
     }
+
+    public void GainLife()
+    {
+        if (life < maxLives)
+        {
+            life++;
+
+            if (life <= lives.Length)
+            {
+                lives[life - 1].SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Player gained life, but no element exists");
+            }
+            Debug.Log("Life gained! Current lives:" + life);
+        }
+        else
+        {
+            Debug.Log("Maximum lives reached!");
+        }
+    }
+    
+    
 }
