@@ -5,15 +5,17 @@ using TMPro;
 
 public class DetectCollisions : MonoBehaviour
 {
-
+    private GameManager gameManager;
     public static int seedsCollected = 0;
     public int totalSeeds = 6;
     public TextMeshProUGUI seedCountText;
+    public int pointValue;
 
     // Start is called before the first frame update
     void Start()
     {
         UpdateSeedCountUI();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -32,7 +34,8 @@ public class DetectCollisions : MonoBehaviour
             seedsCollected++;
             Debug.Log("Seed Collected " + seedsCollected);
 
-            UpdateSeedCountUI();
+            gameManager.UpdateScore(pointValue);
+            UpdateSeedCountUI();            
         }
        
     }

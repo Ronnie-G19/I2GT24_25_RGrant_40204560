@@ -1314,7 +1314,7 @@ Transform:
   m_GameObject: {fileID: 251548173}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.73, y: 86.03, z: -692.14813}
+  m_LocalPosition: {x: 31.94, y: 86.03, z: -692.14813}
   m_LocalScale: {x: 1.65, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4077,7 +4077,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1720194176}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -5096,7 +5096,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1720194176}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: NextLevel
         m_Mode: 1
@@ -5974,6 +5974,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153509839}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1182094966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1182094968}
+  - component: {fileID: 1182094967}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1182094967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182094966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14d8d49bb3dea04c95ab4bab5560f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverText: {fileID: 1252042269}
+  scoreText: {fileID: 3616786}
+  restartButton: {fileID: 1395950356}
+  titleScreen: {fileID: 642876867}
+  levelCompeteText: {fileID: 2056697310}
+  nextLevel: {fileID: 909461174}
+  isGameActive: 0
+  gravityModifier: 1.5
+--- !u!4 &1182094968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182094966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8619854, y: 4.0822825, z: 18.082678}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1197203061
 GameObject:
   m_ObjectHideFlags: 0
@@ -7589,7 +7641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1720194176}
+      - m_Target: {fileID: 1182094967}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -9243,58 +9295,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686632101}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1720194174
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1720194175}
-  - component: {fileID: 1720194176}
-  m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1720194175
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720194174}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8619854, y: 4.0822825, z: 18.082678}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1720194176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720194174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14d8d49bb3dea04c95ab4bab5560f3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverText: {fileID: 1252042269}
-  scoreText: {fileID: 3616786}
-  restartButton: {fileID: 1395950356}
-  titleScreen: {fileID: 642876867}
-  levelCompeteText: {fileID: 2056697310}
-  nextLevel: {fileID: 909461174}
-  isGameActive: 0
-  gravityModifier: 1.5
 --- !u!1 &1724231620
 GameObject:
   m_ObjectHideFlags: 0
@@ -11674,12 +11674,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 554215827827084081, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
+      propertyPath: pointValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 554215827827084081, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
       propertyPath: seedCountText
       value: 
       objectReference: {fileID: 1553196531}
     - target: {fileID: 2529522905863341479, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.67
+      value: -11.57
       objectReference: {fileID: 0}
     - target: {fileID: 2529522905863341479, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11741,6 +11745,10 @@ PrefabInstance:
       propertyPath: lives.Array.data[5]
       value: 
       objectReference: {fileID: 930951767}
+    - target: {fileID: 3572253541427226218, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
+      propertyPath: pointValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4933190062115508441, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11871,6 +11879,7 @@ SceneRoots:
   - {fileID: 534669905}
   - {fileID: 170076735}
   - {fileID: 2014335015}
+  - {fileID: 1182094968}
   - {fileID: 2498797442338000452}
   - {fileID: 1134874413}
   - {fileID: 1730961601}
@@ -11880,7 +11889,6 @@ SceneRoots:
   - {fileID: 1028163604}
   - {fileID: 590108544}
   - {fileID: 1469594083}
-  - {fileID: 1720194175}
   - {fileID: 1746981001}
   - {fileID: 468656352}
   - {fileID: 278783324}

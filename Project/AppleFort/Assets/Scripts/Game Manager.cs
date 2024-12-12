@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
    //Tech
    public bool isGameActive;
    public float gravityModifier = 1.0f;
-   private int score; 
+   private int score;
 
     // Start is called before the first frame update
     void Start()
