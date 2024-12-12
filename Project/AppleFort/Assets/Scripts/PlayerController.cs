@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip crashSound;
     private bool damageCooldown = false;
     private float damageCooldownDuration = 2.0f;
+    public int pointValue;
 
     //Movement
     private float horizontalInput;
@@ -132,6 +133,7 @@ public class PlayerController : MonoBehaviour
         explosionParticle.Play();
         dirtParticle.Stop();
         playerAudio.PlayOneShot(crashSound, 1.0f);
+        gameManager.ReduceScore(pointValue);
 
     }
 

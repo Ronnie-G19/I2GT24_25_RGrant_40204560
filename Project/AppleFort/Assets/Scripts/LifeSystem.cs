@@ -46,10 +46,9 @@ public class LifeSystem : MonoBehaviour
         life -= d;
         if (life >= 0 && life < lives.Length)
         {
-            Destroy(lives[life].gameObject);
-        }   
-        
-        if(life == 0)
+            lives[life].SetActive(false); 
+        }
+        if (life == 0)
         {
             dead = true;
         }
@@ -59,23 +58,17 @@ public class LifeSystem : MonoBehaviour
     {
         if (life < maxLives)
         {
-            life++;
 
-            if (life <= lives.Length)
+            for (int i = 0; i < lives.Length; i++)
             {
-                lives[life - 1].SetActive(true);
+                if (!lives[i].activeInHierarchy)
+                {
+                    lives[i].SetActive(true);
+                    life++;
+                    Debug.Log("Life Gained. Life is now:" + life);
+                    break;                  
+                }
             }
-            else
-            {
-                Debug.Log("Player gained life, but no element exists");
-            }
-            Debug.Log("Life gained! Current lives:" + life);
-        }
-        else
-        {
-            Debug.Log("Maximum lives reached!");
         }
     }
-    
-    
 }

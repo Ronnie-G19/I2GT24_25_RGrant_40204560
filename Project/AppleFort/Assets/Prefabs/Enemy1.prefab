@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSquashed: 0
+  pointValue: 5
 --- !u!1 &9214848770029158719
 GameObject:
   m_ObjectHideFlags: 0

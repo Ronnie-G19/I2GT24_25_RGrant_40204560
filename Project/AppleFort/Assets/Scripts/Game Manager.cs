@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
    //Canvas
    public TextMeshProUGUI gameOverText;
+   public TextMeshProUGUI scoreText;
    public Button restartButton;
    public GameObject titleScreen;
    public TextMeshProUGUI levelCompeteText;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
    //Tech
    public bool isGameActive;
    public float gravityModifier = 1.0f;
+   private int score; 
 
     // Start is called before the first frame update
     void Start()
@@ -73,5 +75,17 @@ public class GameManager : MonoBehaviour
         nextLevel.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         isGameActive = false;
+    }
+
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
+    }
+
+    public void ReduceScore(int scoreToReduce)
+    {
+        score -= scoreToReduce;
+        scoreText.text = "Score: " + score;
     }
 }
