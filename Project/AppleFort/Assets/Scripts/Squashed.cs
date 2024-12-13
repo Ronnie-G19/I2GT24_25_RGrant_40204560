@@ -7,6 +7,7 @@ public class Squashed : MonoBehaviour
     public bool isSquashed = false;
     private GameManager gameManager;
     public int pointValue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,9 @@ public class Squashed : MonoBehaviour
 
         {
             isSquashed = true;
+
+            gameManager.PlayAntDeathSound();
+
             foreach (Transform child in transform) { 
                 child.gameObject.SetActive(false);
             }

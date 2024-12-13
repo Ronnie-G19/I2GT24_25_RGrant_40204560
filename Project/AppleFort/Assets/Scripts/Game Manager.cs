@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
    public float gravityModifier = 1.0f;
    private int score;
 
+    //Audio
+    public AudioSource audioSource;
+    public AudioClip antDeathClip;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,5 +92,13 @@ public class GameManager : MonoBehaviour
     {
         score -= scoreToReduce;
         scoreText.text = "Score: " + score;
+    }
+
+    public void PlayAntDeathSound()
+    {
+        if (audioSource != null && antDeathClip != null)
+        {
+            audioSource.PlayOneShot(antDeathClip, 1.0f);
+        }
     }
 }
