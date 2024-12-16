@@ -85,31 +85,58 @@ public class PlayerController : MonoBehaviour
         }
 
         //Movement
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * horizontalInput);
-        
+        //horizontalInput = Input.GetAxis("Horizontal");
+        //transform.Translate(Vector3.forward * Time.deltaTime * speed * horizontalInput);
+
+
+        //if (horizontalInput != 0)
+        //{
+        // playerAnim.SetBool("isMoving", true);
+        //}
+        //else
+        //{
+        //playerAnim.SetBool("isMoving", false);
+        //}
+
+        //test
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //transform.position += transform.forward * Time.deltaTime * speed;
+        //transform.rotation = Quaternion.Euler(0, -90, 0);
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //transform.position += transform.forward * Time.deltaTime * speed;
+        //transform.rotation = Quaternion.Euler(0, 90, 0);
+        //}
+
+        //test02
+        horizontalInput = Input.GetAxis("Horizontal"); 
+
         
         if (horizontalInput != 0)
         {
             playerAnim.SetBool("isMoving", true);
+
+            
+            transform.position += Vector3.right * horizontalInput * Time.deltaTime * speed;
+
+            
+            if (horizontalInput < 0) // Moving left
+            {
+                transform.rotation = Quaternion.Euler(0, -90, 0);
+            }
+            else if (horizontalInput > 0) // Moving right
+            {
+                transform.rotation = Quaternion.Euler(0, 90, 0);
+            }
         }
         else
         {
             playerAnim.SetBool("isMoving", false);
         }
 
-            //test
-           //if (Input.GetKeyDown(KeyCode.A))
-           //{
-            //transform.position += transform.forward * Time.deltaTime * speed;
-            //transform.rotation = Quaternion.Euler(0, -90, 0);
-           //}
-
-            //if (Input.GetKeyDown(KeyCode.D))
-            //{
-            //transform.position += transform.forward * Time.deltaTime * speed;
-            //transform.rotation = Quaternion.Euler(0, 90, 0);
-            //}
     }
 
 
