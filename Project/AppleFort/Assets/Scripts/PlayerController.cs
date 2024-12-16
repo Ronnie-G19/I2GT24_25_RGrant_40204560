@@ -87,7 +87,8 @@ public class PlayerController : MonoBehaviour
         //Movement
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.forward * Time.deltaTime * speed * horizontalInput);
-
+        
+        
         if (horizontalInput != 0)
         {
             playerAnim.SetBool("isMoving", true);
@@ -97,14 +98,16 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("isMoving", false);
         }
 
-
+            //test
            //if (Input.GetKeyDown(KeyCode.A))
            //{
+            //transform.position += transform.forward * Time.deltaTime * speed;
             //transform.rotation = Quaternion.Euler(0, -90, 0);
            //}
 
             //if (Input.GetKeyDown(KeyCode.D))
             //{
+            //transform.position += transform.forward * Time.deltaTime * speed;
             //transform.rotation = Quaternion.Euler(0, 90, 0);
             //}
     }
