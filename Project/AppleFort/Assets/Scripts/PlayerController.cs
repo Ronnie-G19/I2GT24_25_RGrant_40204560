@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        //Jumping
+        //Jumping - works
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
             //dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
-        
+
 
         //Keeping Player Contained
         //Left
@@ -96,19 +96,6 @@ public class PlayerController : MonoBehaviour
         //else
         //{
         //playerAnim.SetBool("isMoving", false);
-        //}
-
-        //test
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //transform.position += transform.forward * Time.deltaTime * speed;
-        //transform.rotation = Quaternion.Euler(0, -90, 0);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //transform.position += transform.forward * Time.deltaTime * speed;
-        //transform.rotation = Quaternion.Euler(0, 90, 0);
         //}
 
         //test02
