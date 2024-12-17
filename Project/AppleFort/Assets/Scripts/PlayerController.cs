@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private Timer timer; //Calling Timer Class
     private Vector3 originalGravity; //Setting Gravity
     public ParticleSystem explosionParticle;
-    public ParticleSystem dirtParticle;
+    //public ParticleSystem dirtParticle;
     public AudioClip jumpSound;
     public AudioClip crashSound;
     private bool damageCooldown = false;
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
             playerAnim.SetTrigger("Jump_trig");
-            dirtParticle.Stop();
+            //dirtParticle.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
         
@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
         {
 
             isOnGround = true;
-            dirtParticle.Play();
+            //dirtParticle.Play();
 
         }
         else if (collision.gameObject.CompareTag("Enemy"))
@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Damage Taken");
         lifeSystem.TakeDamage(1);
         explosionParticle.Play();
-        dirtParticle.Stop();
+        //dirtParticle.Stop();
         playerAudio.PlayOneShot(crashSound, 1.0f);
         gameManager.ReduceScore(pointValue);
 
@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
         gameOver = true;
         playerAnim.SetBool("Death_b", true);
         playerAnim.SetInteger("DeathType_int", 1);
-        dirtParticle.Stop();
+        //dirtParticle.Stop();
         timer.StopTimer();
         explosionParticle.Play();
         playerAudio.PlayOneShot(crashSound, 1.0f);

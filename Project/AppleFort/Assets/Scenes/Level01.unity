@@ -9351,9 +9351,13 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 8f7368a5f126a9b4a961311ed1e61087, type: 3}
+    - target: {fileID: 2555384193678083514, guid: 5329d3a5f692915499c2f2d4a94616cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2567264035569977939, guid: 5329d3a5f692915499c2f2d4a94616cb, type: 3}
       propertyPath: m_Constraints
-      value: 104
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 5676041459914928174, guid: 5329d3a5f692915499c2f2d4a94616cb, type: 3}
       propertyPath: lives.Array.data[0]
