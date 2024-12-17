@@ -6,6 +6,8 @@ using TMPro;
 public class DetectCollisions : MonoBehaviour
 {
     private GameManager gameManager;
+    private AudioSource seedAudio;
+    public AudioClip seedClip;
     public static int seedsCollected = 0;
     public int totalSeeds = 6;
     public TextMeshProUGUI seedCountText;
@@ -16,6 +18,7 @@ public class DetectCollisions : MonoBehaviour
     {
         UpdateSeedCountUI();
         gameManager = FindObjectOfType<GameManager>();
+        seedAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,8 @@ public class DetectCollisions : MonoBehaviour
             Debug.Log("Seed Collected " + seedsCollected);
 
             gameManager.UpdateScore(pointValue);
-            UpdateSeedCountUI();            
+            UpdateSeedCountUI();
+            seedAudio.PlayOneShot(seedClip, 0.5f);
         }
        
     }
