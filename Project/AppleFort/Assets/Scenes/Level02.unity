@@ -6534,7 +6534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next Level
+  m_text: End Of Game!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -11875,7 +11875,7 @@ PrefabInstance:
       objectReference: {fileID: 1553196531}
     - target: {fileID: 2529522905863341479, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.74
+      value: -12.34
       objectReference: {fileID: 0}
     - target: {fileID: 2529522905863341479, guid: ae9d9a25cf3a47248a4803ecc7f06154, type: 3}
       propertyPath: m_LocalPosition.y
